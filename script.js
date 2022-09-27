@@ -31,14 +31,82 @@ ScrollTrigger.refresh();
 }
 wow();
 
-gsap.to(".bottle",{
-    scrollTrigger:{
-        trigger:"#page2",
-        scroller:"#main",
-        // start:"top 10%",
-        // end:"top -300%",
-        // scrub:1 ,
-        // pin:true
-    },
-    rotate: -15,
+// gsap.to(".bottle",{
+//     scrollTrigger:{
+//         trigger:".bottle",
+//         scroller:"#main",
+//         start:"top 10%",
+//         end:"top -250%",
+//         scrub:2 ,
+//         pin:true
+//     },
+//     rotate: -15,
+// })
+
+var boom= gsap.timeline();
+
+// boom.to(".bottle",{
+//   scrollTrigger:{
+//     trigger:".bottle",
+//     scroller:"#main",
+//     start:"top 15%",
+//     end:"top -20%",
+//     scrub:2 ,
+//     pin:true
+// },
+// rotate: -15,
+// duration: 1,
+// })
+boom.to(".bottle",{
+  scrollTrigger:{
+    trigger:".bottle",
+    scroller:"#main",
+    start:"top 14.5%",
+    end:"top -300%",
+    scrub:.5 ,
+    pin:true
+},
+rotate: -15,
+// duration: .001,
 })
+.to(".bottle",{
+  scrollTrigger:{
+    trigger:".bottle",
+    scroller:"#main",
+    start:"top 14%",
+    end:"top -80%",
+    scrub:.5 ,
+    pin:true
+},
+scale: .5,
+opacity:0,
+x:40
+})
+
+gsap.from(".aboutus h1,.email h1,.email section,.smedia",{
+  scrollTrigger:{
+    trigger:".aboutus h1",
+    start:"top 50%",
+    scroller:"#main",
+  },
+  stagger:.3,
+  x:30,
+  opacity:0
+})
+
+
+// var hazy = document.querySelector("#onewo"),
+// cluster = document.querySelector(".cluster"),
+// sumpina = document.querySelector("#sumpina"),
+// ipaa = document.querySelector("#ipaa"),
+// hoppya = document.querySelector("#hoppya"),
+// hazya = document.querySelector("#hazya"),
+// ;
+
+
+
+// hazy.addEventListener("click",{
+//   ipaa.style.display="flex";
+
+// })
+
