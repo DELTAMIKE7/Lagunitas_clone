@@ -89,7 +89,7 @@ gsap.from(".aboutus h1,.email h1,.email section,.smedia",{
     start:"top 50%",
     scroller:"#main",
   },
-  stagger:.3,
+  stagger:.2,
   x:30,
   opacity:0
 })

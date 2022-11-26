@@ -38,13 +38,15 @@ html,body{
     z-index: 99;
     padding: 0 2rem;
     position: fixed;
-    height: 10vh;
+    height: 12vh;
     width: 100%;
     background-color: var(--dada);
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* border-bottom: 4px double #000; */
+    overflow: hidden;
+    z-index: 999;
 }
 #nav::after{
     content: "";
@@ -55,6 +57,7 @@ html,body{
     height: 4.5px;
     border: solid #000;
     border-width: 1px 0 3.5px;
+    z-index: 9999;
 }
 .navleft{
     width: 7vw;
@@ -75,9 +78,28 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
-.navcenter img{
+.navcenter:hover .ldog{
+    top: 65%;
+}
+.llogo{
     height: 15vw;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.ldog{
+    height: 8vw;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 170%;
+    transform: translate(-50%,-50%);
+    transition: top .4s ease;
 }
 #nbtn{
     padding: 1vw 3vw;
@@ -85,6 +107,10 @@ html,body{
     text-decoration: none;
     outline: none;
     border: none;
+    transition: background-color .6s ease;
+}
+#nbtn:hover{
+    background-color: #000;
 }
 #nbtn>h4{
     font-size: 1.5vw;
@@ -115,7 +141,7 @@ html,body{
     transform: translate(-50%,-50%);
     z-index: 9999;
     /* background-color: red; */
-    /* display: none; */
+    display: flex;
 }
 
 #hazya{
@@ -690,9 +716,12 @@ html,body{
     padding: 1vw 4vw;
     background-color: #000;
     border: none;
+    transition: background-color .4s ease;  
 }
-.pg6bottom>section>button h2{
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(154deg) brightness(107%) contrast(101%);
+.pg6bottom>section>button>h3{
+    /* filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(154deg) brightness(107%) contrast(101%); */
+    color: white;
+    z-index: 99;
 }
 .pg6bottom::before{
     content: "";
@@ -710,6 +739,7 @@ html,body{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+
 }
 /* .pg6bottom>section a{
     background-color: #000;
@@ -775,6 +805,7 @@ html,body{
     font-size: 3vw;
     line-height: 3.4vw;
     width: 100%;
+    transition: color .5s ease;
 }
 .pg7right p{
     margin-top: 20px;
@@ -797,7 +828,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 5vw 1vw;
+    padding: 7vw 1vw;
 }
 .pg8left{
     width: 30vw;
@@ -848,6 +879,7 @@ html,body{
 }
 .pg8list ul li h1{
     font-size: 3.2vw;
+    transition: color .4s ease;
 }
 .pg8list ul li p{
     margin: 1vw 0;
@@ -857,6 +889,7 @@ html,body{
     /* flex-wrap: wrap; */
 }
 .pg8buy{
+    margin-top: 5px;
     display: flex;
     align-items: center;
 }
@@ -866,6 +899,7 @@ html,body{
     padding: 1vw 3vw;
     background-color: #000;
     border: none;
+    transition: background-color .4s ease;
 }
 .ubtn4{
     color: #fff;
@@ -876,7 +910,9 @@ html,body{
 }
 /* ______________Universal button-------- */
 /* ______________Universal button-------- */
-
+.pg8buy{
+    gap: 10px;
+}
 .pg8buy a{
     font-size: 1.7vw;
     font-weight: 100;
@@ -884,58 +920,56 @@ html,body{
     color: #000;
 }
 #page9{
-    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 .pg9top{
     width: 100%;
-    height: 20vh;
-    background-color: rgba(0, 0, 0, 0.178);
+    background: url(https://lagunitas.com/wp-content/themes/lagunitas/assets/images/footer-t.png);
+    background-color: black;
+    /* background-repeat: no-repeat; */
+    background-position: bottom;
+    height: 324px;
+    width: 100%;
 }
-
 .pg9bottom{
     color: #fff;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     background-color: #000;
     display: flex;
     flex-direction: column;
-}
-.pg9bottom::before{
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    height: 324px;
-    background-color: #007023;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    pointer-events: none;
-    /* background: url(https://lagunitas.com/wp-content/themes/lagunitas/assets/images/footer-t.png) repeat-x calc(50% + -147px) 100%/auto 324px; */
+    padding:  3vw 4vw 8vw 2vw;
+    justify-content: space-between;
 }
 .pg9bottom>img{
     background-color: red;
     height: fit-content;
-    padding: 4vw 4vw;
+    /* padding: 7vw 4vw; */
 
-}
-.pg9bottom-up{
-    display: flex;
-    padding: 4vw 3vw;
-}
-.aboutus{
-    padding: 4vw 6vw;
 }
 .aboutus h1{
     font-size: 6vw;
     line-height: 5vw;
+    transition: color .4s ease;
+
+}
+.pg9bottom-up{
+    display: flex;
+    padding: 1vw 3vw;
+    gap: 30px;
+}
+.pg9bottom-up-right{
+    gap: 30px;
+    display: flex;
+    padding: 0vw 0vw 0vw 10vw;
+    flex-direction: column;
 }
 .email{
     display: flex;
     flex-direction: column;
-    padding: 4vw 4vw 0 15vw;
 }
 .email>h1{
     font-family: yank;
@@ -952,22 +986,23 @@ html,body{
 }
 .email section input{
     font-size: 1.2vw;
-    padding: 1vw 7vw 1vw 1vw;
+    padding: 1vw 10vw 1vw 1vw;
     text-decoration: none;
     border: none;
 }
 .smedia{
     display: flex;
-    padding: 4vw 0; 
     gap: 3vw;
 }
 .smedia>i{
     font-size: 2.5vw;
+    transition: color .5s ease;
+
 }
 .pg9bottom-bottom{
     display: flex;
-    padding: 0 4vw 0 10vw;
-    justify-content: space-between;
+    padding: 5vw 2vw 5vw 15vw;
+    justify-content:space-between;
 }
 .license{
     display: flex;
@@ -979,13 +1014,408 @@ html,body{
     color: #fff;
     letter-spacing: .5px;
     white-space: nowrap;
+    transition: color .5s ease;
 }
 .pg9bottom-bottom>p{
     padding: 0 9vw;
 }
 .yohover:hover{
-    color: red;
+    color: #c8102e;
 }
 .yobg:hover{
     background-color: #c8102e;
+}
+
+
+/* --------------detail bottom slide--------- */
+/* --------------detail bottom slide--------- */
+.dline{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 30%;
+    right: 0%;
+    transition: width .5s ease;
+}
+.details{
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.details>a>h5{
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.details:hover .dline{
+    width: 0%;
+    left: 0%;
+    cursor: pointer;
+}
+/* --------------detail bottom slide--------- */
+/* --------------detail bottom slide--------- */
+
+
+
+
+
+@media (max-width:500px) {
+
+    #nav{
+        padding: 0 .8rem;
+    }
+    #nav::after{
+        height: 3.5px;
+    }
+    .navleft{
+        width: 15vw;
+        gap: 7px;
+    }
+    .navleft i{
+        font-size: 1.5rem;
+    }
+    .llogo{
+        height: 35vw;
+    }
+    #nbtn{
+        padding: .2vw 3vw;
+    }
+    .main{
+        min-height: 100vh;
+        width: 100vw;
+    }
+    .bottle{
+        height: 70vw;
+        position: absolute;
+        top: 25%;
+        left: 55%;
+        transform: translate(-50%,-50%);
+        display: none;
+    }
+/* ------------------ Page 11 Responsive --------- */
+/* ------------------ Page 11 Responsive --------- */
+    #page1{
+        padding: 3rem 1rem;
+        min-height: 80vh;
+        width: 100vw;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .pg1left{
+        width: 100%;
+        flex-direction: column;
+        padding: 3rem 1rem 0 1rem;
+    }
+    
+    .pg1left>h3{
+        font-size: 5vw;
+    }
+    .pg1left>h1{
+        font-size: 3.8rem;
+        line-height: 1;
+    }
+    .pg1left>h2{
+        font-size: 8vw;
+        margin-top: 5px;
+    }
+    .pg1left>p{
+        font-family: abadi;
+        font-weight: 100;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        width: 90%;
+    }
+    .pg1right{
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        position: relative;
+    }
+    .pg1right img{
+        width: 23vw;
+        position:relative;
+        bottom: 0;
+        left: 5%;
+    
+    }
+    .pg1right h1{
+        width: 25vw;
+        /* background-color: rebeccapurple; */
+    }
+    .pg1right .smooth:nth-child(1):before{
+        top: 60%;
+        left: -20%;
+        font-size: 30vw;
+    }
+    .pg1right .smooth:nth-last-child(1)::after{
+        right: -20%;
+        font-size: 30vw;
+    }
+    .pg1right>h1>.with{
+        font-size: 15vw;
+        white-space: nowrap;
+        line-height: 10vw;
+    }
+    .pg1right>h1>.smooth{
+        font-size: 6.8vw;
+        white-space: nowrap;
+    }
+/* --------------- Page 2 Responsive------------ */
+/* --------------- Page 2 Responsive------------ */
+    #page2{
+        min-height: 100vh;
+        width: 100%;
+    }
+    #page2>h1{
+        font-size: 22vw;
+        padding: 0 5vw;
+    }
+    .pg2text{
+        width: 100vw;
+        flex-direction: column;
+    }
+    .pg2left{
+        padding: 0 5vw;
+        width: 100%;
+        flex-direction: column;
+    }
+    .pg2left>h2{
+        font-family: yank;
+        font-size: 6.5vw;
+    }
+    .video{
+        height: 50vw;
+        width: 90vw;
+    }
+    .pg2right{
+        width: 100%;
+        padding: 1vw 5vw ;
+    }
+    .pg2right h2{
+        font-size: 2.5rem;
+    }
+    .pg2right p{
+        font-size: 1rem;
+        width: 95%;
+        line-height: 1.2rem;
+    }
+/* --------------- Page 3 Responsive------------ */
+/* --------------- Page 3 Responsive------------ */
+    
+
+#page3{
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+#page3>h1{
+    font-size: 18vw;
+    padding: 0 3vw;
+}
+.pg3text{
+    width: 100%;
+    padding: 0 2vw;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.pg3left{
+    padding: 0 4vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pg3left-part{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.pg3left-part>h2{
+    width: 100%;
+    font-size: 6.5vw;
+    align-items: center;
+    position: relative;
+    margin-bottom: 6px;
+}
+.pg3left-part>.percent{
+    width: 100%;
+}
+.pg3left-part>.percent>h1{
+    font-size: 20vw;
+    width: 40%;
+}
+.pg3left-part>.percent>p{
+    padding: .4vw 2vw 0 0vw;
+    letter-spacing: 1px;
+    width: 60%;
+    line-height: 1.2rem;
+}
+
+
+.pg3right{
+    width: 100%;
+    background-color: #1c2920;
+    padding: 0 5vw ;
+}
+
+.pg3right-top>span{
+    font-size: 5.7vw;
+}
+
+.pg3right-top>img{
+    width: 33vw;
+}
+.pg3right-bottom{
+    font-size: 4.6vw;
+    flex-direction: column;
+    background-color: red;
+}
+.pg3right-bottom h4{
+    font-family: abadi;
+    font-weight: 100;
+}
+/* ---------------- Page  44 Responsive --------- */
+/* ---------------- Page  44 Responsive --------- */
+#page4{
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #007023; */
+}
+
+#boom1{
+    position: relative;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    max-height: 40vh;
+}
+#boom1>img{
+    width: 60vw;
+}
+#boom1>.boomtxt{
+    position: absolute;
+    top: 50%;    
+    left: 50%;
+    background-color: red;
+    width: 50vw;
+    transform: translate(0%,-50%);
+}
+#boom1>.boomtxt>h4{
+    z-index: 99;
+    color: #fff;
+    font-size: .7vw;
+    top: 0;
+    left: 0;
+    font-size: 2vw;
+    z-index: 999;
+    margin-top: -80px;
+}
+#boom1>.boomtxt>p{
+    text-align: center;
+    font-family: abadi;
+    color: #fff;
+    width: 80% ;
+    z-index: 999;
+}
+#boom2{
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 70vh;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+#boom2>.boomtxt{
+    position: absolute;
+    top: 40%;    
+    left: 70%;
+    width: 60%;
+    transform: translate(-50%,0%);
+}
+#boom2>img{
+    width: 25vw;
+}
+#boom2>.boomtxt>h4{
+    z-index: 99;
+    color: #fff;
+    font-size: 2vw;
+    top: 0;
+    left: 0;
+    font-size: 2vw;
+    z-index: 999;
+    margin-top: -80px;
+}
+#boom2>.boomtxt>p{
+    text-align: center;
+    font-family: abadi;
+    color: #fff;
+    width: 80% ;
+    z-index: 999;
+}
+#boom3{
+    position: absolute;
+    top: 5%;
+    right: 0%;
+    width: 42vw;
+    /* background-position: center;
+    background-size: cover;
+    background-image: url(https://lagunitas.com/wp-content/themes/lagunitas/assets/images/splat-black.png); */
+    transform: translate(-10%,0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#boom3 h4{
+    z-index: 99;
+    color: #fff;
+    top: 0;
+    left: 0;
+    font-size: 2vw;
+    z-index: 999;
+    margin-top: -80px;
+}
+#boom3 p{
+    text-align: center;
+    font-family: abadi;
+    color: #fff;
+    width: 30% ;
+    z-index: 999;
+}
+#boom3>img{
+    width: 30vw;
+    position: absolute;
+}
+#wine{
+    bottom: -5%;
+    left: 3%;
+    transform: translate(-50%,-50%);
+    transform: rotate(-25deg);
+    position: absolute;
+    width: 22vw;
+}
+#boom3>i::before{
+    content: "\E90F";
+    position: absolute;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
 }
